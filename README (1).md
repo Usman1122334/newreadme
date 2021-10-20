@@ -17,11 +17,11 @@ This cipher program uses three encryption methods.  Substitution, permutation an
 
 ![](Aspose.Words.dd61cb78-f8af-4789-b3bd-3b4ebaebce48.004.png)
 
-**Substitutions**
+##Substitutions
 
 Substitutions change the characters.  The substitutions can either be direct substitution or functions of other the characters in the message.
 
-**Vigenère / Bellaso**
+##Vigenère / Bellaso**
 
 Each letter in the text and in the passcode are converted to respective numbers and added or subtracted together to give a resulting number.  Each resulting number is converted into a letter. Therefore, two same characters can be ciphered into different characters.  As such frequency attacks can be neutralised. 
 
@@ -30,27 +30,26 @@ Each letter in the text and in the passcode are converted to respective numbers 
 ![](Aspose.Words.dd61cb78-f8af-4789-b3bd-3b4ebaebce48.005.png)
 
 
-**Avalanche cipher**
+## Avalanche cipher
 
 Each character from the plaintext message is converted to a number.  A number taken from the passcode is added to first number of the message. Starting from the second position of the message, the resulting number is then added to the preceding number from the message. This means one change in the message will affect all letters in the ciphertext.  Once completed, the numbers will be converted to ciphertext characters.
 
 
 ![](Aspose.Words.dd61cb78-f8af-4789-b3bd-3b4ebaebce48.006.png)
-
-**Two-character arrays**
+## Two-character arrays
 
 The characters from the plaintext message are substituted with characters from a 2D array.  Therefore, each character will become two characters. The two characters from the 2D array representing each letter from the message can be varied in different permutations.
 
 ![](Aspose.Words.dd61cb78-f8af-4789-b3bd-3b4ebaebce48.007.png)
 
-**Hill function**
+## Hill function
 
 The characters are converted into numbers, segmented and grouped into separate 1D matrices. A predefined constant matrix is multiplied by each number from each 1D matrix to give each resulting number.  Each resulting number is converted back into a character. The properties of matrix multiplication mean that the value of the multiplication is a result of the number, its three adjacent numbers and its position in the 1D matrix.  
 
 ![](Aspose.Words.dd61cb78-f8af-4789-b3bd-3b4ebaebce48.008.png)![](Aspose.Words.dd61cb78-f8af-4789-b3bd-3b4ebaebce48.009.png)
 
 
-**Permutations**
+## Permutations
 
 Permutations change the order of characters in the text.  On its own, permutations offer little protection but in combination with 2D array functions and substitution and random numbers, they can greatly increase the effectiveness of those functions.  
 
@@ -58,39 +57,38 @@ Many permutations in this cipher will rely on number orders from the pass codes.
 
 ![](Aspose.Words.dd61cb78-f8af-4789-b3bd-3b4ebaebce48.010.png)
 
-**Column Transposition**
+## Column Transposition
 
 The letters in the text are placed in a matrix.  The order of column transposition is completed as per the order in the pass code
 
 ![](Aspose.Words.dd61cb78-f8af-4789-b3bd-3b4ebaebce48.011.png)
 
 
-**Rearrangement of groups of letters**
+## Rearrangement of groups of letters
 
 Groups of letters are rearranged as per the pass code
 
 ![](Aspose.Words.dd61cb78-f8af-4789-b3bd-3b4ebaebce48.012.png)
 
-
-**Rearrangement within a group** 	
+## Rearrangement within a group
 
 Letters within a group are rearranged as per the pass code
 
 ![](Aspose.Words.dd61cb78-f8af-4789-b3bd-3b4ebaebce48.013.png)
 
-**Reversal of letters**
+## Reversal of letters
 
 The order of all letters in the text are reversed.  This does not require a pass code.  The function is included in case the code words have a bias towards one end of the text.  Reversing the text ensures both ends of the text are ciphered.  This is to ensure that the cipher has good mixing capabilities in case there is a bias towards one end of the ciphertext.
 
 ![](Aspose.Words.dd61cb78-f8af-4789-b3bd-3b4ebaebce48.014.png)
 
-**Grouping odds and evens**
+## Grouping odds and evens
 
 The odd and even letters are grouped together.  The function repeats as dictated by a number from the pass code.  
 
 ![](Aspose.Words.dd61cb78-f8af-4789-b3bd-3b4ebaebce48.015.png)
 
-**Other functions**
+## Other functions
 
 - **Random letters**
 
@@ -105,7 +103,7 @@ At certain points during the cipher random letters will be added.  These extra r
 
 As shown above the substitution or permutation functions typically use code numbers (generated from the code words) and cipher numbers (generated from the message letters). Both the output from the code numbers and cipher number numbers have shown to generate “random-like” numbers.  Even the smallest change in the code words or the plain text message will result in a seemingly uncorrelated new set of random code numbers and cipher numbers respectively.
 
-**Features of the program**
+## Features of the program
 
 - **Variable cycles**
 
@@ -119,11 +117,11 @@ The cipher uses 14 lists of code numbers.  12 lists are taken from the same func
 
 The length of each list is between 19 to 43 characters.  The exact length is based on the length of the pass codes.  The variable length of the lists makes it more difficult to determine the period of the substitution ciphers which is a way to start to break the cipher.
 
-- **Random numbers**
+## Random numbers
 
 Many ciphers are based on blocks.  This cipher encrypts the text in one big block.  The program can do this with the addition of two random numbers per ten characters in the message.  Therefore, larger messages will have more random numbers diffused into the message.  So, whether the message to encrypt is small or large, it is not expected to make a difference to the security of the encryption.
 
-**Tips to make strong ciphers**
+## Tips to make strong ciphers
 
 The strength in the cipher lies with the pass codes.  It is recommended to use random passcodes.  Personally, I believe having one passcode using 12 characters, a second passcode of 11 characters and a third cipher of between 10 to 12 would offer the best security.
 
@@ -131,7 +129,7 @@ It is recommended not to use the same passcodes in different messages.
 
 Keep the pass codes as securely as possible 
 
-**Weakness of the cipher**
+## Weakness of the cipher
 
 - **Brute force**
 
